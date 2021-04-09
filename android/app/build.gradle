@@ -25,6 +25,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
     compileSdkVersion 28
 
@@ -38,11 +44,26 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.minimalist_flutter_template"
-        minSdkVersion 16
+        applicationId "com.nazarnewstv.app"
+        minSdkVersion 17 // youtube video package doesn't work on SDK's lower than 17
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['nazarnews']
+            keyPassword keystoreProperties['ammar1991']
+            storeFile keystoreProperties['D:\\nazar_key.jks'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['ammar1991']
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
     }
 
     buildTypes {
