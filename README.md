@@ -1,16 +1,16 @@
 # minimalist_flutter_template
 
-A new Flutter project.
+<!-- More info, tips and tricks for making GitHub Profile README can be found in my article at https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7 -->
 
-## Getting Started
+[![Header](assets/images/app_banner.jpg "Header")](https://nazarnews.org/)
 
-This project is a starting point for a Flutter application.
+# Hi, <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+NazarNews.kg правила внутреннего распорядка агентства
+- 1. Принципы справедливости, справедливости, истины и национальных интересов в памяти государственного флага;
+- 2. Из прогрессивных инициатив, предложений, проектов, научных открытий, и внести свой вклад в осуществление жизнеобеспечения;
+- 3. Различные подразделения (религиозные, политические, региональные и т.д.), и в конечном счете к национальному единству;
+- 4. Внимательное отношение религиозных вопросов и избежать конфликта;
+- 5. Проблема заключается в том, чтобы определить детали научных принципов и духовных ценностей жизни, основанных на фактических данных и опыта; 
+- 6. Власть и оппозиция к вопросу справедливого обращения, чтобы перейти к национальным интересам; 
+- 7. Анализ международных вопросов, и их место в русле геополитических интересов, порядочный, идентифицирующих активный вклад; 

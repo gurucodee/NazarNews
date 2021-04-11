@@ -22,7 +22,7 @@ dependencies:
   fluttertoast: ^7.1.6
   font_awesome_flutter: ^8.10.0
   http: ^0.12.2
-  intl: ^0.16.1
+  intl: any
   package_info: ^0.4.3+2
   share: ^0.6.5+4
   shared_preferences: ^0.5.12+4

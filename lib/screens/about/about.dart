@@ -25,7 +25,7 @@ class AboutUs extends StatelessWidget {
     """;
     
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("${getTranslated(context, 'О нас')}"),
       ),

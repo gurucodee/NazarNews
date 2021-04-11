@@ -32,7 +32,7 @@ class _PostTopicsState extends State<PostTopics> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("${getTranslated(context, 'Темы')}"),
       ),

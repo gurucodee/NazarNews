@@ -51,7 +51,7 @@ class _AppSettingsState extends State<AppSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(),// title: Text('App Settings'),
       body: Container(
         padding: EdgeInsets.only(

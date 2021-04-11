@@ -64,7 +64,7 @@ class _LiveStreamState extends State<LiveStream> {
           )
         ],
       ),
-      resizeToAvoidBottomPadding: true,
+      resizeToAvoidBottomInset: true,
       extendBody: true,
       body: FutureBuilder<NazarData>(
         future: stream,

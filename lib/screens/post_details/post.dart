@@ -23,7 +23,7 @@ class _PostDetailState extends State<PostDetail> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: Stack(
           children: [
             CustomScrollView(
