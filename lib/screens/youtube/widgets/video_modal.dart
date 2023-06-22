@@ -5,7 +5,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 class YoutubeVideoModal extends StatefulWidget {
   final Map<String, dynamic> video;
 
-  YoutubeVideoModal({this.video});
+  YoutubeVideoModal({required this.video});
 
   @override
   _YoutubeVideoModalState createState() => _YoutubeVideoModalState();

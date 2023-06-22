@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:NazarNewsTV/localization/local_languages.dart';
 
-DateTime currentBackPressTime;
+DateTime? currentBackPressTime;
 
 Future<bool> toastUserMsg(BuildContext context, String userMsg) async {
   DateTime now = DateTime.now();
   if (currentBackPressTime == null ||
-      now.difference(currentBackPressTime) > Duration(seconds: 2)) {
+      now.difference(currentBackPressTime!) > Duration(seconds: 2)) {
     currentBackPressTime = now;
     Fluttertoast.showToast(
       msg: getTranslated(context, userMsg),

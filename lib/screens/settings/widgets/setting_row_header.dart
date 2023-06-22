@@ -6,14 +6,18 @@ class SettingsHeader extends StatefulWidget {
   final String headerText;
   final IconData headerIcon;
 
-  const SettingsHeader({Key key, this.headerIcon, this.headerText, this.iconSize}) : super(key: key);
+  const SettingsHeader(
+      {Key? key,
+      required this.headerIcon,
+      required this.headerText,
+      required this.iconSize})
+      : super(key: key);
 
   @override
   _SettingsHeaderState createState() => _SettingsHeaderState();
 }
 
 class _SettingsHeaderState extends State<SettingsHeader> {
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +30,9 @@ class _SettingsHeaderState extends State<SettingsHeader> {
                 widget.headerIcon,
                 color: Theme.of(context).primaryColor,
               ),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               Text(
                 "${widget.headerText}",
                 style: TextStyle(
@@ -41,7 +47,9 @@ class _SettingsHeaderState extends State<SettingsHeader> {
           height: 15,
           thickness: 1,
         ),
-        SizedBox(height: 10,)
+        SizedBox(
+          height: 10,
+        )
       ],
     );
   }

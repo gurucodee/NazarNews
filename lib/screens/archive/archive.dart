@@ -4,7 +4,6 @@ import 'package:NazarNewsTV/screens/archive/widgets/grid_items.dart';
 import 'package:NazarNewsTV/screens/global_widgets/error_message.dart';
 import 'package:NazarNewsTV/services/api/api_service.dart';
 import 'package:NazarNewsTV/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PostsArchive extends StatefulWidget {
@@ -42,14 +41,14 @@ class _PostsArchiveState extends State<PostsArchive> {
           if (snapshot.hasData) {
             return GridView.builder(
                 padding: SliverGridPadding,
-                itemCount: snapshot.data.data.length,
+                itemCount: snapshot.data?.data.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   crossAxisCount: 2,
                 ),
                 itemBuilder: (context, index) {
-                  var data = snapshot.data.data[index];
+                  var data = snapshot.data?.data[index];
                   return ArchiveBuilder(archive: data);
                 });
           } else if (snapshot.hasError) {

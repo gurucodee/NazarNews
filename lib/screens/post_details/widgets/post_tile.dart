@@ -2,11 +2,10 @@ import "package:flutter/material.dart";
 import "package:NazarNewsTV/styles.dart";
 
 class PostTile extends StatelessWidget {
-
   final bool darkTheme;
   final Map<String, dynamic> post;
 
-  PostTile({this.post, this.darkTheme = false});
+  PostTile({required this.post, this.darkTheme = false});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +25,14 @@ class PostTile extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headline1
-                .copyWith(color: textColor),
+                ?.copyWith(color: textColor),
           ),
           Text(
             post['dtime'].toUpperCase(),
-            style: Theme.of(context).textTheme.subtitle1.copyWith(
-              color: Theme.of(context).primaryColor
-            ),
+            style: Theme.of(context)
+                .textTheme
+                .subtitle1
+                ?.copyWith(color: Theme.of(context).primaryColor),
           ),
         ],
       ),

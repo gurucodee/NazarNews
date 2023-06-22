@@ -4,9 +4,7 @@ import 'package:NazarNewsTV/localization/local_languages.dart';
 import 'package:NazarNewsTV/screens/settings/widgets/setting_row_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:package_info/package_info.dart';
-
-import '../../app.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class AppSettings extends StatefulWidget {
   @override
@@ -44,7 +42,7 @@ class _AppSettingsState extends State<AppSettings> {
   }
 
   _onLocationClick(
-      BuildContext context, String routeWidget, [Map<String, dynamic> info]) {
+      BuildContext context, String routeWidget, [Map<String, dynamic>? info]) {
     Navigator.pushNamed(context, routeWidget, arguments: info ?? null);
   }
 
@@ -134,8 +132,8 @@ class _AppSettingsState extends State<AppSettings> {
 
   GestureDetector buildSettingsRow(
     BuildContext context, {
-    String rowText,
-    Function rowCallBack,
+    required String rowText,
+    required Function rowCallBack,
     bool noIcon = false,
     bool isNotification = false,
   }) {

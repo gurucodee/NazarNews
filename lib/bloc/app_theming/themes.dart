@@ -20,10 +20,13 @@ final appThemeData = {
     splashColor: Colors.transparent, // remove ripple splash colors
     highlightColor: Colors.transparent, // remove ripple splash colors
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      toolbarTextStyle: TextTheme(
         headline1: AppBarTextStyle,
         headline6: AppBarTextStyle,
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        headline1: AppBarTextStyle,
+        headline6: AppBarTextStyle,
+      ).headline6,
     ),
     textTheme: TextTheme(
       headline1: TitleTextStyle,
@@ -41,10 +44,13 @@ final appThemeData = {
     splashColor: Colors.transparent, // remove ripple splash colors
     highlightColor: Colors.transparent, // remove ripple splash colors
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      toolbarTextStyle: TextTheme(
         headline1: AppBarTextStyle,
         headline6: AppBarTextStyle,
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        headline1: AppBarTextStyle,
+        headline6: AppBarTextStyle,
+      ).headline6,
     ),
     textTheme: TextTheme(
       headline1: TitleTextStyle,
@@ -62,10 +68,13 @@ final appThemeData = {
     splashColor: Colors.transparent, // remove ripple splash colors
     highlightColor: Colors.transparent, // remove ripple splash colors
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      toolbarTextStyle: TextTheme(
         headline1: AppBarTextStyle,
         headline6: AppBarTextStyle,
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        headline1: AppBarTextStyle,
+        headline6: AppBarTextStyle,
+      ).headline6,
     ),
     textTheme: TextTheme(
       headline1: TitleTextStyle,
@@ -83,10 +92,13 @@ final appThemeData = {
     splashColor: Colors.transparent, // remove ripple splash colors
     highlightColor: Colors.transparent, // remove ripple splash colors
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      toolbarTextStyle: TextTheme(
         headline1: AppBarTextStyle,
         headline6: AppBarTextStyle,
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        headline1: AppBarTextStyle,
+        headline6: AppBarTextStyle,
+      ).headline6,
     ),
     textTheme: TextTheme(
       headline1: TitleTextStyle,
@@ -104,10 +116,13 @@ final appThemeData = {
     splashColor: Colors.transparent, // remove ripple splash colors
     highlightColor: Colors.transparent, // remove ripple splash colors
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      toolbarTextStyle: TextTheme(
         headline1: AppBarTextStyle,
         headline6: AppBarTextStyle,
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        headline1: AppBarTextStyle,
+        headline6: AppBarTextStyle,
+      ).headline6,
     ),
     textTheme: TextTheme(
       headline1: TitleTextStyle,
@@ -125,10 +140,13 @@ final appThemeData = {
     splashColor: Colors.transparent, // remove ripple splash colors
     highlightColor: Colors.transparent, // remove ripple splash colors
     appBarTheme: AppBarTheme(
-      textTheme: TextTheme(
+      toolbarTextStyle: TextTheme(
         headline1: AppBarTextStyle,
         headline6: AppBarTextStyle,
-      ),
+      ).bodyText2, titleTextStyle: TextTheme(
+        headline1: AppBarTextStyle,
+        headline6: AppBarTextStyle,
+      ).headline6,
     ),
     textTheme: TextTheme(
       headline1: TitleTextStyle,

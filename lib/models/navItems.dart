@@ -6,7 +6,7 @@ class ItemData {
   final IconData icon;
   final String routeName;
 
-  ItemData({this.title, this.icon, this.routeName});
+  ItemData({required this.title, required this.icon, required this.routeName});
 
   static List<ItemData> getNavItems() {
     return [

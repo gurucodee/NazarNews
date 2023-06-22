@@ -2,18 +2,21 @@ import 'package:NazarNewsTV/localization/local_languages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SearchBar extends StatefulWidget {
+class SearchHomeBar extends StatefulWidget {
   final bool searchClicked;
   final TextEditingController filterController;
 
-  const SearchBar({Key key, this.filterController, this.searchClicked = false})
+  const SearchHomeBar(
+      {Key? key,
+      required this.filterController,
+      this.searchClicked = false})
       : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
 }
 
-class _SearchBarState extends State<SearchBar> {
+class _SearchBarState extends State<SearchHomeBar> {
   @override
   Widget build(BuildContext context) {
     bool isSearchClicked = widget.searchClicked;

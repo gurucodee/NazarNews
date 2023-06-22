@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -45,8 +45,8 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.nazarnewstv.app"
-        minSdkVersion 17 // youtube video package doesn't work on SDK's lower than 17
-        targetSdkVersion 28
+        minSdkVersion 29 // youtube video package doesn't work on SDK's lower than 17
+        targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

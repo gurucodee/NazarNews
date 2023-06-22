@@ -3,13 +3,13 @@ import 'package:NazarNewsTV/localization/local_languages.dart';
 import 'package:NazarNewsTV/screens/settings/app_settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class ApplicationDescription extends StatefulWidget {
 
   final PackageInfo info;
 
-  const ApplicationDescription({Key key, this.info}) : super(key: key);
+  const ApplicationDescription({Key? key, required this.info}) : super(key: key);
 
   @override
   _ApplicationDescriptionState createState() => _ApplicationDescriptionState();

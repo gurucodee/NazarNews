@@ -1,7 +1,5 @@
 import 'package:NazarNewsTV/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/style.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:NazarNewsTV/screens/global_widgets/image_banner.dart';
 
@@ -9,7 +7,7 @@ class PostDetail extends StatefulWidget {
   final String id;
   final Map<String, dynamic> post;
 
-  PostDetail({this.id, this.post});
+  PostDetail({required this.id, required this.post});
 
   @override
   _PostDetailState createState() => _PostDetailState();
@@ -72,7 +70,7 @@ class _PostDetailState extends State<PostDetail> {
                             style: Theme.of(context)
                               .textTheme
                               .headline1
-                              .copyWith(
+                              ?.copyWith(
                                 color: Colors.black,
                                 fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
@@ -81,7 +79,7 @@ class _PostDetailState extends State<PostDetail> {
                         ),
                         Text(
                           widget.post['dtime'].toUpperCase(),
-                          style: Theme.of(context).textTheme.subtitle1.copyWith(
+                          style: Theme.of(context).textTheme.subtitle1?.copyWith(
                             color: Theme.of(context).primaryColor
                           ),
                         ),
@@ -100,9 +98,9 @@ class _PostDetailState extends State<PostDetail> {
                                     fontSize: FontSize(20.0),
                                   ),
                                 },
-                                onLinkTap: (link) {
-                                  print(link);
-                                },
+                                // onLinkTap: (String link) {
+                                //   print(link);
+                                // },
                               ),
                             ],
                         ),

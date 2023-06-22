@@ -21,7 +21,7 @@ class _LiveStreamState extends State<LiveStream> {
 
   var stream;
   bool webViewIsLoading = true;
-  WebViewController _webViewController;
+  late WebViewController _webViewController;
   final PagesUrl _endpoint = PagesUrl.stream;
 
   Future<void> _getData() async {
@@ -70,7 +70,7 @@ class _LiveStreamState extends State<LiveStream> {
         future: stream,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            var data = snapshot.data.data[0];
+            var data = snapshot.data?.data[0];
             if(!data['online']){
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,

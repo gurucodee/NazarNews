@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SingleTopic extends StatelessWidget {
 
   final Map<String, dynamic> topic;
-  SingleTopic({this.topic});
+  SingleTopic({required this.topic});
 
   @override
   Widget build(BuildContext context) {

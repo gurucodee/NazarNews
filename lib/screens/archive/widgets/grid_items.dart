@@ -1,12 +1,11 @@
 import 'package:NazarNewsTV/localization/local_languages.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ArchiveBuilder extends StatelessWidget {
 
   final Map<String, dynamic> archive;
 
-  ArchiveBuilder({this.archive});
+  ArchiveBuilder({required this.archive});
 
   @override
   Widget build(BuildContext context) {

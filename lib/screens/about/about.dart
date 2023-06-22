@@ -1,13 +1,10 @@
 import 'package:NazarNewsTV/localization/local_languages.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/style.dart';
 import 'package:flutter_html/flutter_html.dart';
 
 class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     const htmlData = """
       <p>- Принципы справедливости, справедливости, истины и национальных интересов в памяти государственного флага;</p>
       <p>- Из прогрессивных инициатив, предложений, проектов, научных открытий, и внести свой вклад в осуществление жизнеобеспечения;</p>
@@ -23,7 +20,7 @@ class AboutUs extends StatelessWidget {
       </p>
       <p>Email: <a mailto="nazarnews.kg@gmail.com">nazarnews.kg@gmail.com</a>
     """;
-    
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -44,9 +41,7 @@ class AboutUs extends StatelessWidget {
               Html(
                 data: htmlData.toString(),
                 style: {
-                  "img": Style(
-                    width: 25.0
-                  ),
+                  "img": Style(width: Width(25.0)),
                   "hr": Style(
                     border: Border(
                       bottom: BorderSide(
@@ -57,12 +52,12 @@ class AboutUs extends StatelessWidget {
                   "p": Style(
                     fontWeight: FontWeight.w300,
                     fontSize: FontSize(16.0),
-                    margin: EdgeInsets.only(top: 20.0, bottom: 30.0),
+                    margin: Margins.only(top: 20.0, bottom: 30.0),
                   ),
                 },
-                onLinkTap: (link) {
-                  print(link);
-                },
+                // onLinkTap: (link) {
+                //   print(link);
+                // },
               ),
             ],
           ),
@@ -71,5 +66,4 @@ class AboutUs extends StatelessWidget {
       // AssetImage('images/nazar_news_logo.png', package: 'assets'),
     );
   }
-  
 }

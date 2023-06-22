@@ -1,4 +1,4 @@
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:NazarNewsTV/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,7 +9,7 @@ class YoutubeVideoItemBuild extends StatefulWidget {
 
   final Map<String, dynamic> video;
 
-  YoutubeVideoItemBuild({this.video});
+  YoutubeVideoItemBuild({required this.video});
 
   @override
   _YoutubeVideoItemBuildState createState() => _YoutubeVideoItemBuildState();
@@ -23,20 +23,23 @@ class _YoutubeVideoItemBuildState extends State<YoutubeVideoItemBuild> with Sing
     return degree / unitRadian;
   }
 
-  Function shareVideo() {
-    final RenderBox box = context.findRenderObject();
-    Share.share(
-      widget.video['url'],
-      subject: widget.video['title'],
-      sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
-    );
+  Function? shareVideo() {
+    final RenderBox? box = context.findRenderObject() as RenderBox?;
+    if (box != null) {
+      Share.share(
+        widget.video['url'],
+        subject: widget.video['title'],
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+      );
+    }
+    return null;
   }
 
   // Create an animation controller to animate the video button actions
-  Animation rotationAnimation;
-  Animation degShareButtonTranslationAnimation;
-  Animation degPlayButtonTranslationAnimation;
-  AnimationController animationController;
+  late Animation rotationAnimation;
+  late Animation degShareButtonTranslationAnimation;
+  late Animation degPlayButtonTranslationAnimation;
+  late AnimationController animationController;
 
   @override
   void initState(){

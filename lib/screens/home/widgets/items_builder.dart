@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 class HomeItemsBuilder extends StatelessWidget {
 
   final Map<String, dynamic> post;
-  HomeItemsBuilder({this.post});
+  HomeItemsBuilder({required this.post});
 
   _onLocationClick(BuildContext context, Map<String, dynamic> postItem) {
     Navigator.pushNamed(context, PostDetailRoute,
