@@ -3,13 +3,12 @@ import 'package:NazarNewsTV/screens/home/widgets/items_builder.dart';
 import 'package:NazarNewsTV/screens/home/widgets/search_bar.dart';
 import 'package:NazarNewsTV/services/user_message.dart';
 import 'package:NazarNewsTV/styles.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
-import 'package:share/share.dart';
+import 'package:flutter/services.dart';
 import "package:flutter/material.dart";
 import "package:NazarNewsTV/models/app_data.dart";
 import 'package:NazarNewsTV/services/api/api_service.dart';
 import 'package:NazarNewsTV/screens/global_widgets/drawerNavigation.dart';
+import 'package:share_plus/share_plus.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -67,7 +66,8 @@ class News extends State<Home> {
       extendBody: true,
       backgroundColor: Colors.white,
       body: WillPopScope(
-        onWillPop: () async => await toastUserMsg(context, "Для подтверждения выхода, нажмите назад ещё раз"),
+        onWillPop: () async => await toastUserMsg(
+            context, "Для подтверждения выхода, нажмите назад ещё раз"),
         child: RefreshIndicator(
           color: Theme.of(context).primaryColor,
           backgroundColor: Theme.of(context).primaryColorLight,
@@ -84,7 +84,7 @@ class News extends State<Home> {
                 ),
                 leading: InkWell(
                   onTap: () {
-                    _scaffoldKey.currentState.openDrawer();
+                    _scaffoldKey.currentState?.openDrawer();
                   },
                   child: Icon(
                     Icons.menu_open_outlined,
@@ -95,7 +95,6 @@ class News extends State<Home> {
                 floating: false,
                 pinned: true,
                 snap: false,
-                brightness: Brightness.dark,
                 expandedHeight: 350.0,
                 actions: <Widget>[
                   RawMaterialButton(
@@ -113,10 +112,10 @@ class News extends State<Home> {
                     shape: CircleBorder(),
                   ),
                 ],
-                flexibleSpace: SearchBar(
+                flexibleSpace: SearchHomeBar(
                   filterController: _filterContoller,
                   searchClicked: isSearchClicked,
-                ),
+                ), systemOverlayStyle: SystemUiOverlayStyle.light,
               ),
               SliverList(
                 delegate: SliverChildListDelegate(
@@ -128,12 +127,12 @@ class News extends State<Home> {
                           builder: (context, snapshot) {
                             if (snapshot.hasData) {
                               return ListView.builder(
-                                itemCount: snapshot.data.data.length,
+                                itemCount: snapshot.data?.data.length,
                                 physics: NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
                                 padding: EdgeInsets.zero,
                                 itemBuilder: (context, index) {
-                                  var data = snapshot.data.data[index];
+                                  var data = snapshot.data?.data[index];
                                   return HomeItemsBuilder(post: data);
                                 },
                               );
@@ -174,11 +173,12 @@ class News extends State<Home> {
         splashColor: Theme.of(context).primaryColorLight,
         backgroundColor: Theme.of(context).primaryColor,
         onPressed: () {
-          final RenderBox box = context.findRenderObject();
+          final RenderObject? box = context.findRenderObject();
           Share.share(
             website_url,
             subject: subject,
-            sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
+            sharePositionOrigin:
+                (box as RenderBox?)!.localToGlobal(Offset.zero) & box!.size,
           );
         },
       ),

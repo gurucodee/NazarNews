@@ -7,7 +7,7 @@ class NazarData {
   final int next_page;
 
   NazarData({
-    this.data,
+    required this.data,
     this.total = 0,
     this.has_next = false,
     this.next_page = 1,

@@ -11,6 +11,6 @@ class ThemeChange extends ThemeEvent {
   final AppTheme theme;
 
   ThemeChange({
-    @required this.theme
+    required this.theme
   });
 }

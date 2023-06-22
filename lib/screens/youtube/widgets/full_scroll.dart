@@ -42,9 +42,9 @@ class _FullScrollVideosState extends State<FullScrollVideos> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-              itemCount: snapshot.data.data.length,
+              itemCount: snapshot.data!.data.length,
               itemBuilder: (context, index) {
-                var data = snapshot.data.data[index];
+                var data = snapshot.data!.data[index];
                 return YoutubeVideoItemBuild(video: data);
               },
             );

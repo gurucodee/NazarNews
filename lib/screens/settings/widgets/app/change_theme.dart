@@ -30,7 +30,7 @@ class AppSettingsChangeTheme extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(150),
-                  color: appThemeData[itemAppTheme].primaryColor,
+                  color: appThemeData[itemAppTheme]?.primaryColor,
                   boxShadow: [
                     BoxShadow(
                         color: Theme.of(context).primaryColorLight,

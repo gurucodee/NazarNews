@@ -25,7 +25,7 @@ class _AppSettingsFontSizeState extends State<AppSettingsFontSize> {
           children: [
             Text(
               getTranslated(context, 'Размер заголовка статьи будет таким же, каким вы его видите в этой строке.'),
-              style: Theme.of(context).textTheme.headline1.copyWith(
+              style: Theme.of(context).textTheme.headline1?.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: _value
               ),

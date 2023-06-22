@@ -5,11 +5,13 @@ class ThemeState extends Equatable {
   final ThemeData themeData;
 
   const ThemeState({
-    @required this.themeData,
+    required this.themeData,
   });
   
   @override
   List<Object> get props => [themeData];
 }
 
-class ThemeInitial extends ThemeState {}
+class ThemeInitial extends ThemeState {
+  ThemeInitial({required ThemeData themeData}) : super(themeData: themeData);
+}

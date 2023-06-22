@@ -1,12 +1,11 @@
 import 'package:NazarNewsTV/localization/local_languages.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ErrorMessage extends StatefulWidget {
 
   final dynamic retrivedFunction;
 
-  const ErrorMessage({Key key, this.retrivedFunction}) : super(key: key);
+  const ErrorMessage({Key? key, this.retrivedFunction}) : super(key: key);
 
   @override
   _ErrorMessageState createState() => _ErrorMessageState();
@@ -35,14 +34,17 @@ class _ErrorMessageState extends State<ErrorMessage> {
           textAlign: TextAlign.center,
         ),
         SizedBox(height: 10.0),
-        OutlineButton(
-          splashColor: Theme.of(context).primaryColorLight,
-          color: Colors.white,
+        OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.white,
+            // splashColor: Theme.of(context).primaryColorLight,
+          ),
           onPressed: () {
             widget.retrivedFunction();
           },
           child: Text('${getTranslated(context, 'Повторите попытку')}'),
         ),
+
       ],
     );
   }

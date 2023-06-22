@@ -5,7 +5,6 @@ import 'package:NazarNewsTV/screens/settings/widgets/app_description.dart';
 import 'package:NazarNewsTV/screens/settings/widgets/app/change_theme.dart';
 import 'package:NazarNewsTV/screens/settings/widgets/version/select_languages.dart';
 import 'package:NazarNewsTV/screens/youtube/widgets/video_modal.dart';
-import 'package:NazarNewsTV/services/user_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:NazarNewsTV/bloc/app_theming/theme_bloc.dart';
@@ -60,8 +59,8 @@ const AppSettingsDescriptionRoute = '/app-settings-descriptionroute';
 
 class App extends StatefulWidget {
   static void setLocale(BuildContext context, Locale newLocale) {
-    _AppState state = context.findAncestorStateOfType<_AppState>();
-    state.setLocale(newLocale);
+    _AppState? state = context.findAncestorStateOfType<_AppState>();
+    state?.setLocale(newLocale);
   }
 
   @override
@@ -69,7 +68,7 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  Locale _locale;
+  late Locale _locale;
   setLocale(Locale locale) {
     setState(() {
       _locale = locale;
@@ -105,7 +104,7 @@ class _AppState extends State<App> {
       builder: (context, child) {
         return ScrollConfiguration(
           behavior: MyScrollBehavior(),
-          child: child,
+          child: child ?? Container(),
         );
       },
       locale: _locale ?? null,
@@ -126,8 +125,8 @@ class _AppState extends State<App> {
       ],
       localeResolutionCallback: (locale, supportedLocales) {
         for (var supportedLocale in supportedLocales) {
-          if (supportedLocale.languageCode == locale.languageCode &&
-              supportedLocale.countryCode == locale.countryCode) {
+          if (supportedLocale.languageCode == locale?.languageCode &&
+              supportedLocale.countryCode == locale?.countryCode) {
             return supportedLocale;
           }
         }
@@ -138,7 +137,7 @@ class _AppState extends State<App> {
 
   RouteFactory _routes() {
     return (settings) {
-      final Map<String, dynamic> arguments = settings.arguments;
+      final Object? arguments = settings.arguments;
       Widget screen;
       switch (settings.name) {
         case HomePageRoute:
@@ -146,13 +145,13 @@ class _AppState extends State<App> {
           break;
         case PostDetailRoute:
           screen = PostDetail(
-            id: arguments['pid'],
-            post: arguments['post'],
+            id: (arguments as Map<String, dynamic>)['pid'] ?? '',
+            post: (arguments)['post'] ?? '',
           );
           break;
         case YoutubeVideoRoute:
           screen = YoutubeVideoModal(
-            video: arguments['videoItem'],
+            video: (arguments as Map<String, dynamic>)['videoItem'] ?? '',
           );
           break;
         case AboutUsRoute:
@@ -184,7 +183,7 @@ class _AppState extends State<App> {
           break;
         case AppSettingsDescriptionRoute:
           screen = ApplicationDescription(
-            info: arguments['appInfo'],
+            info: (arguments as Map<String, dynamic>)['appInfo'] ?? '',
           );
           break;
         default:

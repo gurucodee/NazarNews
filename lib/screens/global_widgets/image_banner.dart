@@ -6,7 +6,7 @@ class ImageBanner extends StatelessWidget {
   final double height;
   final String imagePath;
 
-  ImageBanner({@required this.imagePath, this.height = 200.0});
+  ImageBanner({required this.imagePath, this.height = 200.0});
 
   @override
   Widget build(BuildContext context) {

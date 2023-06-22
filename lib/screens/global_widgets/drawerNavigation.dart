@@ -1,15 +1,12 @@
-import 'package:NazarNewsTV/localization/app_localization.dart';
 import 'package:NazarNewsTV/localization/local_languages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:NazarNewsTV/models/navItems.dart';
 import 'package:NazarNewsTV/models/socialItems.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class DrawerNavigationWidget extends StatelessWidget {
-  const DrawerNavigationWidget({Key key}) : super(key: key);
+  const DrawerNavigationWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

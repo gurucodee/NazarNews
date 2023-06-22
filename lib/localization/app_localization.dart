@@ -7,11 +7,12 @@ class AppLocalization {
   AppLocalization(this.locale);
 
   final Locale locale;
-  static AppLocalization of(BuildContext context) {
+
+  static AppLocalization? of(BuildContext context) {
     return Localizations.of<AppLocalization>(context, AppLocalization);
   }
 
-  Map<String, String> _localizedValues;
+  Map<String, String> _localizedValues = {}; // Initialize with an empty map
 
   Future<void> load() async {
     String jsonStringValues =
@@ -22,16 +23,15 @@ class AppLocalization {
   }
 
   String translate(String key) {
-    return _localizedValues[key];
+    return _localizedValues[key]!;
   }
 
-  // static member to have simple access to the delegate from Material App
+  // static member to have simple access to the delegate from MaterialApp
   static const LocalizationsDelegate<AppLocalization> delegate =
       _AppLocalizationsDelegate();
 }
 
-class _AppLocalizationsDelegate
-    extends LocalizationsDelegate<AppLocalization> {
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalization> {
   const _AppLocalizationsDelegate();
 
   @override
